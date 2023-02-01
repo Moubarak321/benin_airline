@@ -1,0 +1,1172 @@
+{% load static %}
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en">
+
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Bingo | Responsive Multipurpose Parallax HTML5 Template</title>
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="One page parallax responsive HTML Template">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+	<meta name="author" content="Themefisher">
+	<meta name="generator" content="Themefisher Bingo HTML Template v1.0">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'airline/images/favicon.png' %}" />
+
+	<!-- CSS
+  ================================================== -->
+	<!-- Themefisher Icon font -->
+	<link rel="stylesheet" href="{% static 'airline/plugins/themefisher-font/style.css' %}">
+	<!-- bootstrap.min css -->
+	<link rel="stylesheet" href="{% static 'airline/plugins/bootstrap/bootstrap.min.css' %}">
+	<!-- Lightbox.min css -->
+	<link rel="stylesheet" href="{% static 'airline/plugins/lightbox2/css/lightbox.min.css' %}">
+	<!-- animation css -->
+	<link rel="stylesheet" href="{% static 'airline/plugins/animate/animate.css' %}">
+	<!-- Slick Carousel -->
+	<link rel="stylesheet" href="{% static 'airline/plugins/slick/slick.css' %}">
+	<!-- Main Stylesheet -->
+	<link rel="stylesheet" href="{% static 'airline/css/style.css' %}">
+	<!-- animate.css -->
+    <link rel="stylesheet" href="{% static 'airline/css/animate.css' %}">
+
+	<style>
+		#background-video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+		.about-section {
+			position: relative;
+			z-index: 2;
+			background-size: cover;
+			background-position: center;
+			overflow-x: hidden;
+			background-color: #f8f9fd;
+		}
+
+		.about-section::after {
+			position: absolute;
+			content: '';
+			top: 0;
+			right: 0;
+			width: 24%;
+			height: 100%;
+			background-color: #4285f4;
+			z-index: -1;
+
+		}
+
+		.about-left-content {
+			margin-top: -10px;
+		}
+
+		.about-left-content .title {
+			margin-bottom: 30px;
+		}
+
+		.about-left-content p {
+			margin-bottom: 15px;
+		}
+
+		.about-item li {
+			padding: 3px 0;
+		}
+
+		.about-item li::before {
+			content: "\f00c";
+			color: #4285f4;
+			font-family: 'Font Awesome 5 Free';
+			font-size: 12px;
+			margin-right: 10px;
+			font-weight: 700;
+		}
+
+		.about-left-content .cmn-btn {
+			margin-top: 30px;
+		}
+
+		.about-element-one {
+			position: absolute;
+			top: 25%;
+			right: 35px;
+		}
+
+		.about-element-one img {
+			animation: rotateOut 50s linear infinite;
+		}
+
+		.about-element-two {
+			position: absolute;
+			top: 30%;
+			right: 0;
+		}
+
+		.about-section .cmn-btn {
+			display: inline-flex;
+		}
+		.bg_img {
+			background-image: url('static/airline/images/map.png');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat; 
+		}
+		.cmn-btn {
+    position: relative;
+    padding: 0 30px;
+    background-color: #4285f4;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 50px;
+    overflow: hidden;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    z-index: 1;
+}
+
+.cmn-btn::before ,.cmn-btn::after{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    content: '';
+    background-color: #4285f4;
+    z-index: -1;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+
+.cmn-btn::before{
+    right: 50%;
+}
+
+.cmn-btn::after{
+    left: 50%;
+}
+
+.cmn-btn:hover::after {
+    left: 100%; 
+}
+
+.cmn-btn:hover::before {
+    right: 100%; 
+}
+
+.cmn-btn:hover {
+    border: 1px solid #4285f4;
+    color: #292929;
+    background: transparent;
+}
+
+.cmn-btn-active{
+    position: relative;
+    padding: 0 30px;
+    background-color: transparent;
+    color: #4285f4;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 50px;
+    overflow: hidden;
+    text-transform: uppercase;
+    border: 1px solid #4285f4;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    z-index: 1;
+}
+
+.cmn-btn-active::before ,.cmn-btn-active::after{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    content: '';
+    background-color: transparent;
+    z-index: -1;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+
+.cmn-btn-active::before{
+    right: 50%;
+}
+
+.cmn-btn-active::after{
+    left: 50%;
+}
+
+.cmn-btn-active:hover::after {
+    left: 100%; 
+}
+
+.cmn-btn-active:hover::before {
+    right: 100%; 
+}
+
+.cmn-btn-active:hover {
+    border: 1px solid #4285f4;
+    color: #fff;
+    background: #4285f4;
+}
+.pt-120 {
+    padding-top: 120px;
+}
+.pb-120 {
+    padding-bottom: 120px;
+}
+
+
+	@media(max-width: 1700px) {
+    
+    
+    .about-section::after{
+        width: 32%;
+    }
+    .about-element-one {
+        top: 28%;
+        width: 25%;
+    }
+    .about-element-two{
+        width: 50%;
+    }
+    
+}
+
+
+
+
+@media (max-width: 991px) {
+    
+    .about-section::after{
+        background-color: #fff;
+    }
+    
+    .about-element-one{
+        display: none;
+    }
+    .about-element-two{
+        display: none;
+    }
+    .about-section::after{
+        width: 0;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</style>
+	<script>
+		var video = document.getElementById("background-video");
+var btn = document.getElementById("btnVideo");
+
+function playAndPause () {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause II";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play ▶";
+  }
+}
+
+
+	</script>
+</head>
+
+<body id="body">
+
+	<!--
+  Start Preloader
+  ==================================== -->
+	<div id="preloader">
+    <div class='preloader'>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+	<!--
+  End Preloader
+  ==================================== -->
+
+	<!--
+Fixed Navigation
+==================================== -->
+	<header class="navigation fixed-top">
+		<div class="container">
+			<!-- main nav -->
+			<nav class="navbar navbar-expand-lg navbar-light px-0">
+				<!-- logo -->
+				<a class="navbar-brand logo" href="{% url 'index' %}">
+					<img loading="lazy" class="logo-default" src="{% static 'airline/images/company/logo.png' %}" alt="logo" style="width: 100px; height: 50px;"/>
+					<img loading="lazy" class="logo-white" src="{% static 'airline/images/company/logo.png' %}"
+						alt="logo" style="width: 100px; height: 50px;"/>
+				</a>
+				<!-- /logo -->
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+					aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navigation">
+					<ul class="navbar-nav ml-auto text-center">
+						<li class="nav-item dropdown active">
+							<a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown" role="button"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Homepage <i class="tf-ion-chevron-down"></i>
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="{% url 'index' %}">Homepage</a></li>
+								<li><a class="dropdown-item" href="onepage-slider.html">Onepage</a></li>
+								<li><a class="dropdown-item" href="onepage-text.html">Onepage 2</a></li>
+
+								<li class="dropdown dropdown-submenu dropright">
+									<a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0501" role="button"
+										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu <i
+											class="tf-ion-chevron-down"></i></a>
+
+									<ul class="dropdown-menu" aria-labelledby="dropdown0501">
+										<li><a class="dropdown-item" href="index.html">Submenu 01</a></li>
+										<li><a class="dropdown-item" href="index.html">Submenu 02</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link" href="{% url 'about' %}">About Us</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link" href="service.html">Services</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link" href="portfolio.html">Portfolio</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link" href="team.html">Team</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link" href="pricing.html">Pricing</a>
+						</li>
+						<li class="nav-item ">
+							<a class="nav-link" href="contact.html">Contact</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown02" role="button"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Pages <i class="tf-ion-chevron-down"></i>
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown02">
+								<li><a class="dropdown-item" href="404.html">404 Page</a></li>
+								<li><a class="dropdown-item" href="blog.html">Blog Page</a></li>
+								<li><a class="dropdown-item" href="single-post.html">Blog Single Page</a></li>
+
+								<li class="dropdown dropdown-submenu dropleft">
+									<a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0201" role="button"
+										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu <i
+											class="tf-ion-chevron-down"></i></a>
+
+									<ul class="dropdown-menu" aria-labelledby="dropdown0201">
+										<li><a class="dropdown-item" href="index.html">Submenu 01</a></li>
+										<li><a class="dropdown-item" href="index.html">Submenu 02</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!-- /main nav -->
+		</div>
+	</header>
+	<!--
+End Fixed Navigation
+==================================== -->
+
+{% block heroSlider %}
+
+
+	<div class="hero-slider">
+		<div class="slider-item th-fullpage hero-area"
+			style="background-image: url(static/airline/images/slider/slide6.jpg);">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">Crafting Digital <br>
+							Experience</h1>
+						<p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">Lorem ipsum dolor sit
+							amet,
+							consectetur adipisicing elit. Quod, <br> veritatis tempore nostrum id
+							officia quaerat eum corrupti, <br> ipsa aliquam velit.</p>
+						<a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn btn-main"
+							href="service.html">Explore Us</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slider-item th-fullpage hero-area"
+			style="background-image: url(static/airline/images/slider/bimoteur.jpg);">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<h1 data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".1">We Combine Design
+							<br> and
+							Creativity</h1>
+						<p data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".5">Create just what you
+							need
+							for your Perfect Website. Choose from a wide range
+							<br> of Elements & simply put them on our Canvas.
+						</p>
+						<a data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".8" class="btn btn-main"
+							href="service.html">Explore Us</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slider-item th-fullpage hero-area"
+			style="background-image: url(static/airline/images/slider/aile.jpg);">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<h1 data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".1">We Combine Design
+							<br> and
+							Creativity</h1>
+						<p data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".5">Create just what you
+							need
+							for your Perfect Website. Choose from a wide range
+							<br> of Elements & simply put them on our Canvas.
+						</p>
+						<a data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".8" class="btn btn-main"
+							href="service.html">Explore Us</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock heroSlider %}
+
+{% block content %}
+	<!--
+Start About Section   ==========BENIN AIRLINES
+==================================== -->
+	<section class="service-2 section">
+		<div class="container">
+			<div class="title text-center">
+				<h2>BENIN AIRLINE</h2>
+			</div>
+			<div class="row justify-content-center ">
+
+				<div class="col-lg-4 col-md-3 col-sm-4 col-xs-8 ">
+					<!-- section title -->
+					<div class="title text-center description">
+						<!-- <h2>BENIN AIRLINE</h2> -->
+						<p>Benin Airlines (Ex Air Taxi Bénin) est une compagnie aérienne agrée par l’Agence Nationale de
+							l’Aviation Civile et certifiée par elle selon les standards OACI en matière d’utilisation
+							des aéronefs, de leur entretien et des qualifications du personnel navigant.</p>
+						<div class="border"></div>
+					</div>
+					<!-- /section title -->
+				</div>
+
+				<div class=" col-lg-4 col-md-3 col-sm-4 col-xs-8">
+					<!-- section title -->
+					<div class="title text-center description">
+						<!-- <h2>BENIN AIRLINE</h2> -->
+						<p>Benin Airlines (Ex Air Taxi Bénin) est une compagnie aérienne agrée par l’Agence Nationale de
+							l’Aviation Civile et certifiée par elle selon les standards OACI en matière d’utilisation
+							des aéronefs, de leur entretien et des qualifications du personnel navigant. </p>
+						<div class="border"></div>
+					</div>
+					<!-- /section title -->
+				</div>
+
+
+			</div>
+
+			<div class="row mb-2 justify-content-center">
+				<!-- section title -->
+				<div class="col-xl-6 col-lg-8">
+					<div class="progress-block">
+						<ul>
+							<li class="mb-3">
+								<span>Sécurité</span>
+								<div class="progress">
+									<div class="progress-bar" style="width: 100%;">100%
+									</div>
+								</div>
+							</li>
+							<li class="mb-3">
+								<span>Flexibilité</span>
+								<div class="progress">
+									<div class="progress-bar" style="width: 100%;">100%
+									</div>
+								</div>
+							</li>
+							<li class="">
+								<span>Ponctualité</span>
+								<div class="progress">
+									<div class="progress-bar" style="width: 100%;">100%
+									</div>
+								</div>
+							</li>
+							<!-- <li>
+						<span>IOS Development</span>
+						<div class="progress">
+							<div class="progress-bar" style="width: 78%;">
+							</div>
+						</div>
+					</li> -->
+						</ul>
+
+					</div>
+				</div>
+				<!-- /section title -->
+			</div>
+		</div> <!-- End container -->
+	</section> <!-- End section -->
+
+
+
+
+
+	<section class="about-section pt-120 pb-120 bg_img" data-background="static/airline/images/map.png">
+		<div class="about-element-one">
+			<img src="{% static 'airline/images/shape.png' %}" alt="image" >
+		</div>
+		<div class="about-element-two my-paroller" data-paroller-factor="0.05" data-paroller-type="foreground"
+			data-paroller-direction="horizontal"  style=" animation:  jackInTheBox  40s linear infinite;">
+			<img src="{% static 'airline/images/shape-2.png' %}" alt="image">
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="about-left-content">
+						<h2 class="title"> <q> Mode opératoire </q><br> <span class="offset-2">	BENIN AIRLINE </span></h2>
+						<p>Partant d'une ambition simple et mesurée, devenir le partenaire incontournable des entreprises des secteurs miniers bancaires et des PME. </p>
+						<p>La rigueur et le sérieux de toutes les parties prenantes au processus de certification de la compagnie Benin Airlines, 
+							ont permis au Bénin de sortir de la liste noire de l’Union Européenne. Depuis ce temps, nous sommes en permanence soumis 
+							à un programme de surveillance de l’autorité à travers des audits et diverses inspections.</p>
+						<div class="row">
+							<div class="col-lg-6">
+								<ul class="about-item">
+									<li>Praesent lacus integer.</li>
+									<li>Fermentum sed duis</li>
+								</ul>
+							</div>
+							<div class="col-lg-6">
+								<ul class="about-item">
+									<li>Praesent lacus integer.</li>
+									<li>Fermentum sed duis</li>
+								</ul>
+							</div>
+						</div>
+						<a href="myaccount.html" class="cmn-btn">Become a pilot</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- about-section end -->
+
+
+
+
+
+	<section class="service-2 section">
+		<div class="container">
+			<div class="row justify-content-center">
+
+				<div class="col-lg-6">
+					<!-- section title -->
+					<div class="title text-center">
+						<h2>Nos offres</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet,
+							consectetur
+							adipisicing elit. Voluptates, earum. </p>
+						<div class="border"></div>
+					</div>
+					<!-- /section title -->
+				</div>
+			</div>
+			<div class="row">
+
+				<div class="col-md-4 text-center d-none d-md-block">
+					<img loading="lazy" src="{% static 'airline/images/about/member.jpg' %}"
+						class="img-fluid inline-block" alt="">
+				</div>
+				<div class="col-md-8">
+					<div class="row text-center">
+						<div class="col-md-6 col-sm-6">
+							<div class="service-item">
+								<i class="tf-ion-ios-alarm-outline"></i>
+								<h4>Vols réguliers sur Parakou</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui
+									venenatis.</p>
+							</div>
+						</div><!-- END COL -->
+						<div class="col-md-6 col-sm-6">
+							<div class="service-item">
+								<i class="tf-ion-ios-briefcase-outline"></i>
+								<h4>BAPTÊME DE L'AIR</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui
+									venenatis.</p>
+							</div>
+						</div><!-- END COL -->
+						<div class="col-md-6 col-sm-6">
+							<div class="service-item">
+								<i class="tf-ion-ios-email-outline"></i>
+								<h4>VOLS À LA DEMANDE</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui
+									venenatis.</p>
+							</div>
+						</div><!-- END COL -->
+						<div class="col-md-6 col-sm-6">
+							<div class="service-item">
+								<i class="tf-ion-ios-locked-outline"></i>
+								<h4>EVACUATION SANITAIRE </h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui
+									venenatis.</p>
+							</div>
+						</div><!-- END COL -->
+						<div class="col-md-6 col-sm-6">
+							<div class="service-item">
+								<i class="tf-ion-ios-locked-outline"></i>
+								<h4>VOLS CARGO</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui
+									venenatis.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> <!-- End row -->
+		</div> <!-- End container -->
+	</section> <!-- End section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--
+Start About Section
+==================================== -->
+	<section class="about-2 section" id="about">
+		<div class="container">
+			<div class="row justify-content-center">
+				<!-- section title -->
+				<div class="col-lg-6">
+					<div class="title text-center">
+						<h2>POURQUOI CHOISIR BENIN AIRLINES?</h2>
+						<p>Nous avons recruté des cadres expérimentés, 
+							et des pilotes expérimentés sur la base de profils très pointus</p>
+						<div class="border"></div>
+					</div>
+				</div>
+				<!-- /section title -->
+			</div>
+
+			<div class="row">
+
+				<div class="col-md-6 mb-4 mb-md-0">
+					<img loading="lazy" src="{% static 'airline/images/about/about-2.png' %}" class="img-fluid" alt="">
+				</div>
+				<div class="col-md-6">
+					<h2 class="title text-center mb-0">LA SÉCURITÉ À BORD DE NOS AVIONS EST POUR NOUS UNE PRIORITÉ</h2>
+					<ul class="checklist">
+						<li>RESPECT DES NORMES ET DE LA RÉGLEMENTATION DE L’OACI</li>
+						<li>SURVEILLANCE CONTINUE EFFECTUÉE PAR L’ANAC BÉNIN CERTIFIÉE OACI</li>
+						<li>MAINTENANCE RÉGULIÈRE AUX NORMES OACI</li>
+						<li>EXPÉRIENCE DE VOYAGE UNIQUE ET AGRÉABLE</li>
+						<li>FLEXIBILITÉ ASSURÉE</li>
+						<li>PILOTES QUALIFIÉS</li>
+					</ul>
+					<!-- <a href="about.html" class="btn btn-main mt-20">Learn More</a> -->
+				</div>
+			</div> <!-- End row -->
+		</div> <!-- End container -->
+	</section> <!-- End section -->
+
+	<!--
+Start Call To Action
+==================================== -->
+	<section class="call-to-action section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-xl-12 col-lg-10 text-center">
+					<h2>Ils nous font confiance</h2>
+					<p></p>
+					<!-- <a href="contact.html" class="btn btn-main">Contact Us</a> -->
+				</div>
+
+
+				<div class="row">
+					<!-- first count item -->
+					<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
+						<div class="counters-item">
+							<i class="tf-ion-ios-alarm-outline"></i>
+							<div>
+								<img loading="lazy" src="{% static 'airline/images/client-logo/a.jpg' %}"
+									class="img-fluid" alt="">
+							</div>
+							<h3>Partenaire</h3>
+						</div>
+					</div>
+					<!-- end first count item -->
+	
+					<!-- second count item -->
+					<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
+						<div class="counters-item">
+							<i class="tf-ion-ios-analytics-outline"></i>
+							<div>
+								<img loading="lazy" src="{% static 'airline/images/client-logo/b.jpg' %}"
+									class="img-fluid" alt="">
+							</div>
+							<h3>Partenaire</h3>
+						</div>
+					</div>
+					<!-- end second count item -->
+	
+					<!-- third count item -->
+					<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
+						<div class="counters-item">
+							<i class="tf-ion-ios-compose-outline"></i>
+							<div>
+								<img loading="lazy" src="{% static 'airline/images/client-logo/c.jpg' %}"
+									class="img-fluid" alt="">
+							</div>
+							<h3>Partenaire</h3>
+	
+						</div>
+					</div>
+					<!-- end third count item -->
+	
+					<!-- fourth count item -->
+					<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
+						<div class="counters-item ">
+							<i class="tf-ion-ios-bolt-outline"></i>
+							<div>
+								<img loading="lazy" src="{% static 'airline/images/client-logo/d.jpg' %}"
+									class="img-fluid" alt="">
+							</div>
+							<h3>Partenaire</h3>
+						</div>
+					</div>
+					<!-- end fourth count item -->
+					<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
+						<div class="counters-item ">
+							<i class="tf-ion-ios-bolt-outline"></i>
+							<div>
+								<img loading="lazy" src="{% static 'airline/images/client-logo/e.jpg' %}"
+									class="img-fluid" alt="">
+							</div>
+							<h3>Partenaire</h3>
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
+						<div class="counters-item ">
+							<i class="tf-ion-ios-bolt-outline"></i>
+							<div>
+								<img loading="lazy" src="{% static 'airline/images/client-logo/f.png' %}"
+									class="img-fluid" alt="">
+							</div>
+							<h3>Partenaire</h3>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
+						<div class="counters-item ">
+							<i class="tf-ion-ios-bolt-outline"></i>
+							<div>
+								<img loading="lazy" src="{% static 'airline/images/client-logo/g.jpg' %}"
+									class="img-fluid" alt="">
+							</div>
+							<h3>Partenaire</h3>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
+						<div class="counters-item ">
+							<i class="tf-ion-ios-bolt-outline"></i>
+							<div>
+								<img loading="lazy" src="{% static 'airline/images/client-logo/h.jpg' %}"
+									class="img-fluid" alt="">
+							</div>
+							<h3>Partenaire</h3>
+						</div>
+					</div>
+				</div>
+
+
+
+			</div> <!-- End row -->
+		</div> <!-- End container -->
+	</section> <!-- End section -->
+
+	<!--
+Start Counter Section
+==================================== -->
+	<section class="counter-wrapper section-sm">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-xl-6 col-lg-8 text-center">
+					<div class="title">
+						<h2>Award-Winning Agency</h2>
+						<p>Vestibulum nisl tortor, consectetur quis imperdiet bibendum, laoreet sed arcu. Sed
+							condimentum iaculis ex, in faucibus lorem accumsan non. Donec mattis tincidunt metus. Morbi
+							sed tortor a risus luctus dignissim.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<!-- first count item -->
+				<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
+					<div class="counters-item">
+						<i class="tf-ion-ios-alarm-outline"></i>
+						<div>
+							<span class="counter" data-count="150">0</span>
+						</div>
+						<h3>Happy Clients</h3>
+					</div>
+				</div>
+				<!-- end first count item -->
+
+				<!-- second count item -->
+				<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
+					<div class="counters-item">
+						<i class="tf-ion-ios-analytics-outline"></i>
+						<div>
+							<span class="counter" data-count="130">0</span>
+						</div>
+						<h3>Projects completed</h3>
+					</div>
+				</div>
+				<!-- end second count item -->
+
+				<!-- third count item -->
+				<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
+					<div class="counters-item">
+						<i class="tf-ion-ios-compose-outline"></i>
+						<div>
+							<span class="counter" data-count="99">0</span>
+						</div>
+						<h3>Positive feedback</h3>
+
+					</div>
+				</div>
+				<!-- end third count item -->
+
+				<!-- fourth count item -->
+				<div class="col-md-3 col-sm-6 col-xs-6 text-center ">
+					<div class="counters-item kill-border">
+						<i class="tf-ion-ios-bolt-outline"></i>
+						<div>
+							<span class="counter" data-count="250">0</span>
+						</div>
+						<h3>Cups of Coffee</h3>
+					</div>
+				</div>
+				<!-- end fourth count item -->
+			</div> <!-- end row -->
+		</div> <!-- end container -->
+	</section> <!-- end section -->
+
+	<!-- Start Testimonial
+=========================================== -->
+
+	<section class="testimonial section" id="testimonial">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<!-- testimonial wrapper -->
+					<div class="testimonial-slider">
+						<!-- testimonial single -->
+						<div class="item text-center">
+							<i class="tf-ion-chatbubbles"></i>
+							<!-- client info -->
+							<div class="client-details">
+								<p>
+									Avec Air Taxi Benin, on est partis de Cotonou pour la Pendjari en deux heures, 
+									on a pu faire la visite et on est revenus le même jour. Avant on ne pouvait pas 
+									le faire si ce n’était par la route et en quatorze heures. C’était cool, on n’a 
+									même pas senti qu’on était dans les airs. On a même applaudit pour les pilotes, 
+									c’était vraiment smooth :
+								</p>
+							</div>
+							<!-- /client info -->
+							<!-- client photo -->
+							<div class="client-thumb">
+								<img loading="lazy" src="{% static 'airline/images/client-logo/clients-1.jpg' %}"
+									class="img-fluid" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>
+									Mme Olanma OJUKU
+								</h3>
+								<span>Directrice de l’agence de voyages GOTTA Voyages</span>
+							</div>
+							<!-- /client photo -->
+						</div>
+						<!-- /testimonial single -->
+
+						<!-- testimonial single -->
+						<div class="item text-center">
+							<i class="tf-ion-chatbubbles"></i>
+							<!-- client info -->
+							<div class="client-details">
+								<p>
+									It was very amazing trip, very safe, and very smoothy, 
+									and also is a unique experience.For me it was a really 
+									african authentic experience
+								</p>
+							</div>
+							<!-- /client info -->
+							<!-- client photo -->
+							<div class="client-thumb">
+								<img loading="lazy" src="{% static 'airline/images/client-logo/clients-2.jpg' %}"
+									class="img-fluid" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>None</h3>
+								<span>
+									Représentant Agence de voyage chinoise
+								</span>
+							</div>
+							<!-- /client photo -->
+						</div>
+						<!-- /testimonial single -->
+
+						<!-- testimonial single -->
+						<div class="item text-center">
+							<i class="tf-ion-chatbubbles"></i>
+							<!-- client info -->
+							<div class="client-details">
+								<p>
+									Depuis que j’ai découvert Air Taxi Benin, 
+									je ne prends plus ma voiture. En terme d’économie, d’énergie, 
+									c’est moins fatiguant vraiment c’est super
+								</p>
+							</div>
+							<!-- /client info -->
+							<!-- client photo -->
+							<div class="client-thumb">
+								<img loading="lazy" src="{% static 'airline/images/client-logo/clients-3.jpg' %}"
+									class="img-fluid" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>He ADAMOU ISSIFOU</h3>
+								<span>
+									Député
+								</span>
+							</div>
+							<!-- /client photo -->
+						</div>
+						<!-- /testimonial single -->
+						<!-- testimonial single -->
+						<div class="item text-center">
+							<i class="tf-ion-chatbubbles"></i>
+							<!-- client info -->
+							<div class="client-details">
+								<p>
+									Un service très professionnel, des pilotes très compétents
+									, un avion assez confortable et en très bon état, donc grosso modo, 
+									un service exemplaire. Ce qui montre que le Benin avance.
+								</p>
+							</div>
+							<!-- /client info -->
+							<!-- client photo -->
+							<div class="client-thumb">
+								<img loading="lazy" src="{% static 'airline/images/client-logo/clients-3.jpg' %}"
+									class="img-fluid" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>
+									James OBAROWSKI 
+								</h3>
+								<span>
+									Directeur Général TECHNO SERVE
+								</span>
+							</div>
+							<!-- /client photo -->
+						</div>
+						<!-- /testimonial single -->
+						<!-- testimonial single -->
+						<div class="item text-center">
+							<i class="tf-ion-chatbubbles"></i>
+							<!-- client info -->
+							<div class="client-details">
+								<p>
+									Le vol est stable, et ponctuel. 
+									J’invite tous les acteurs du domaine du tourisme 
+									à en faire la promotion, et tout le monde à faire 
+									cette expérience unique.
+                            	</p>
+							</div>
+							<!-- /client info -->
+							<!-- client photo -->
+							<div class="client-thumb">
+								<img loading="lazy" src="{% static 'airline/images/client-logo/clients-3.jpg' %}"
+									class="img-fluid" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>									
+									Michel ABIMBOLA
+                            	</h3>
+								<span>
+									Ministre de la Culture du Bénin
+								</span>
+							</div>
+							<!-- /client photo -->
+						</div>
+						<!-- /testimonial single -->
+					</div>
+				</div> <!-- end col lg 12 -->
+			</div> <!-- End row -->
+		</div> <!-- End container -->
+	</section> <!-- End Section -->
+
+	<!--
+Start Blog Section
+=========================================== -->
+<!-- end section -->
+
+{% endblock content %}
+
+	<footer id="footer" class="bg-one">
+		<div class="top-footer">
+			<div class="container">
+				<div class="row justify-content-around">
+					<div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+						<h3>about</h3>
+						<p>Integer posuere erat a ante venenati dapibus posuere velit aliquet. Fusce dapibus, tellus
+							cursus commodo, tortor mauris sed posuere.</p>
+					</div>
+					<!-- End of .col-sm-3 -->
+
+					<div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+						<ul>
+							<li>
+								<h3>Our Services</h3>
+							</li>
+							<li><a href="service.html">Ui/Ux Design</a></li>
+							<li><a href="service.html">Graphic Design</a></li>
+							<li><a href="service.html">Web Design</a></li>
+							<li><a href="service.html">Web Development</a></li>
+						</ul>
+					</div>
+					<!-- End of .col-sm-3 -->
+
+					<div class="col-lg-2 col-md-6 mb-5 mb-md-0">
+						<ul>
+							<li>
+								<h3>Quick Links</h3>
+							</li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="service.html">Services</a></li>
+							<li><a href="blog.html">Blogs</a></li>
+							<li><a href="404.html">404</a></li>
+						</ul>
+					</div>
+					<!-- End of .col-sm-3 -->
+
+					<div class="col-lg-3 col-md-6">
+						<ul>
+							<li>
+								<h3>Connect with us Socially</h3>
+							</li>
+							<li><a href="https://www.facebook.com/themefisher/">Facebook</a></li>
+							<li><a href="https://www.twitter.com/themefisher/">Twitter</a></li>
+							<li><a href="https://www.youtube.com/channel/UCx9qVW8VF0LmTi4OF2F8YdA">Youtube</a></li>
+							<li><a href="https://www.github.com/themefisher/">Github</a></li>
+						</ul>
+					</div>
+					<!-- End of .col-sm-3 -->
+
+				</div>
+			</div> <!-- end container -->
+		</div>
+		<div class="footer-bottom">
+			<h5>&copy; Copyright 2020. All rights reserved.</h5>
+			<h6>Design and Developed by <a href="https://themefisher.com/">Themefisher</a></h6>
+		</div>
+	</footer> <!-- end footer -->
+
+
+	<!-- end Footer Area
+========================================== -->
+	<!-- 
+    Essential Scripts
+    =====================================-->
+	<!-- Main jQuery -->
+	<script src="{% static 'airline/plugins/jquery/jquery.min.js' %}"></script>
+
+	<!-- Bootstrap4 -->
+	<script src="{% static 'airline/plugins/bootstrap/bootstrap.min.js' %}"></script>
+	<!-- Parallax -->
+	<script src="{% static 'airline/plugins/parallax/jquery.parallax-1.1.3.js' %}"></script>
+	<!-- lightbox -->
+	<script src="{% static 'airline/plugins/lightbox2/js/lightbox.min.js' %}"></script>
+	<!-- Owl Carousel -->
+	<script src="{% static 'airline/plugins/slick/slick.min.js' %}"></script>
+	<!-- filter -->
+	<script src="{% static 'airline/plugins/filterizr/jquery.filterizr.min.js' %}"></script>
+	<!-- Smooth Scroll js -->
+	<script src="{% static 'airline/plugins/smooth-scroll/smooth-scroll.min.js' %}"></script>
+	<!-- Google Map -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"></script>
+	<script src="{% static 'airline/plugins/google-map/gmap.js' %}"></script>
+
+	<!-- Custom js -->
+	<script src="{% static 'airline/js/script.js' %}"></script>
+
+</body>
+
+</html>
